@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black"
+    tools:context=".View_words">
+    <ImageView
+        android:id="@+id/im_veiw_word_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_volume_up"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/tv_view_word_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Word test"
+        android:layout_toEndOf="@id/im_veiw_word_icon"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        android:textSize="20sp"/>
+
+    <View
+        android:id="@+id/horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/tv_view_word_title"
+        android:background="#DDD4D4" />
+
+    <TextView
+        android:id="@+id/tv_view_word_meaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blabalabablabalaababalabalabalabalababbabsbbsbbbbababbababbabbabbabbabbabbabbababbabbabbabbabbabbabbbabbabbabbabbabbabbabbabbbabbababbab"
+        android:layout_below="@id/horizontal_line"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+    <Button
+        android:id="@+id/bt_view_user_update"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:text="Update"
+        android:layout_below="@id/tv_view_word_meaning"
+        android:layout_marginTop="60dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:layout_marginStart="10dp"/>
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:background="@android:color/holo_red_light"
+        android:layout_below="@id/tv_view_word_meaning"
+        android:layout_toEndOf="@id/bt_view_user_update"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>
