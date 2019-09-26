@@ -1,22 +1,30 @@
-package helpers
+package com.example.wordsearch.helpers
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import model.Words
+import com.example.wordsearch.model.Words
 
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,null,
     DATABASE_VERSION) {
     //Create table for words
-    private val CREATE_WORD_TABLE = "CREATE TABLE "+ TABLE_NAME+ "("+ COLUMN_WORD_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"+
-            COLUMN_WORD_TITLE+" TEXT,"+ COLUMN_WORD_MEANING+" TEXT,"+")"
+    private val CREATE_WORD_TABLE = ("CREATE TABLE "+ TABLE_NAME+ "("+ COLUMN_WORD_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"+
+            COLUMN_WORD_TITLE+" TEXT,"+ COLUMN_WORD_MEANING+" TEXT,"+")")
+
+    private val DROP_WORD_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
+
     override fun onCreate(db: SQLiteDatabase?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (db != null) {
+            db.execSQL(this.CREATE_WORD_TABLE)
+        }
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (p0 != null) {
+            p0.execSQL(DROP_WORD_TABLE)
+        }
+        onCreate(p0)
     }
 
     //add record to Database

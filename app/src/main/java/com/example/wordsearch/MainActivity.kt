@@ -1,21 +1,56 @@
 package com.example.wordsearch
 
+import android.content.AbstractThreadedSyncAdapter
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
+import android.provider.UserDictionary
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.wordsearch.helpers.DatabaseHelper
+import com.example.wordsearch.helpers.WordRecyclerAdapter
+import com.example.wordsearch.model.Words
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+//Declaration
+    private lateinit var allWordRecycler: RecyclerView
+    private lateinit var listView: MutableList<Words>
+    private lateinit var recyclerAdapter: WordRecyclerAdapter
+    private lateinit var databaseHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        //Get teh recycler view id from content_xml
+        allWordRecycler = findViewById<View>(R.id.all_words_recycler) as RecyclerView
+        listView = ArrayList()
+        recyclerAdapter = WordRecyclerAdapter(listView,this)
+
+        //Linear manager or grid manager
+        val mLayoutManager = LinearLayoutManager(this)
+
+        allWordRecycler.layoutManager = mLayoutManager
+
+        //Give the card view  fix ssize
+        allWordRecycler.setHasFixedSize(true)
+
+        //Links the recycler adapter class to the recycler view
+
+        allWordRecycler.adapter = recyclerAdapter
+
+        databaseHelper = DatabaseHelper(this)
+
+        //Call a db function to execute from the inner class to execute
+        GetDataFromSQLite().execute()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -46,4 +81,24 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    //this class will help your get data from SQLite db without laggin
+
+    // We use AyncTask whenever we want to fetch bulky work and make our app to work faster
+    inner class GetDataFromSQLite: AsyncTask<Void, Void, List<Words>>()
+    {
+        override fun doInBackground(vararg p0: Void?): List<Words> {
+            return  databaseHelper.fetchWord()
+        }
+
+        override fun onPostExecute(result: List<Words>?) {
+            super.onPostExecute(result)
+
+            //It clears the list view
+            listView.clear()
+            listView.addAll(result!!)
+        }
+
+    }
+
 }
+
