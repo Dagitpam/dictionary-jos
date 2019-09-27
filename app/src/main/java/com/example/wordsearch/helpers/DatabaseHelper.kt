@@ -36,7 +36,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         //Inserting the values into our db
         val values = ContentValues()
         values.put(COLUMN_WORD_TITLE,words.title)
-        values.put(COLUMN_WORD_MEANING,words.title)
+        values.put(COLUMN_WORD_MEANING,words.meaning)
 
         db.insert(TABLE_NAME,null,values)
         db.close()
