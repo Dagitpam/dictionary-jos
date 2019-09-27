@@ -2,6 +2,7 @@ package com.example.wordsearch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 class View_words : AppCompatActivity() {
@@ -24,5 +25,7 @@ class View_words : AppCompatActivity() {
         title.setText(title_word)
 
         meaning.setText(meaning_word)
+
+
     }
 }

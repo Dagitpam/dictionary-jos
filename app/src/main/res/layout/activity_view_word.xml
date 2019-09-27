@@ -45,7 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"/>
     <Button
-        android:id="@+id/bt_view_user_update"
+        android:id="@+id/bt_view_word_update"
         android:layout_width="170dp"
         android:layout_height="50dp"
         android:text="Update"
@@ -56,13 +56,14 @@
         android:textAllCaps="false"
         android:layout_marginStart="10dp"/>
     <Button
+        android:id="@+id/bt_view_word_delete"
         android:layout_width="170dp"
         android:layout_height="50dp"
         android:text="Delete"
         android:textAllCaps="false"
         android:background="@android:color/holo_red_light"
-        android:layout_below="@id/tv_view_word_meaning"
-        android:layout_toEndOf="@id/bt_view_user_update"
+        android:layout_below="@+id/tv_view_word_meaning"
+        android:layout_toEndOf="@+id/bt_view_word_update"
         android:layout_marginTop="60dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
