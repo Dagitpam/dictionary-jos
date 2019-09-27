@@ -36,6 +36,8 @@ class WordRecyclerAdapter(private val listWord: List<Words>, internal var contex
             i.putExtra("id", listWord[position].id)
             i.putExtra("title", listWord[position].title)
             i.putExtra("meaning",listWord[position].meaning)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
             i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(i)
 
@@ -49,7 +51,7 @@ class WordRecyclerAdapter(private val listWord: List<Words>, internal var contex
 
         val textTitle: TextView
         init {
-            textTitle = view.findViewById(R.id.et_addword) as TextView
+            textTitle = view.findViewById(R.id.tv_word_tile) as TextView
         }
     }
 

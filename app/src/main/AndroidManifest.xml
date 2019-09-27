@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Update_word"></activity>
         <activity android:name=".View_words">
+
         </activity>
+
+        <activity android:name=".Update_word" />
         <activity android:name=".Add_word" />
         <activity android:name=".Splash">
             <intent-filter>

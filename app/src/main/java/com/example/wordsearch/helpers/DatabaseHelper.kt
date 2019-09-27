@@ -9,14 +9,16 @@ import com.example.wordsearch.model.Words
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,null,
     DATABASE_VERSION) {
     //Create table for words
-    private val CREATE_WORD_TABLE = ("CREATE TABLE "+ TABLE_NAME+ "("+ COLUMN_WORD_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"+
-            COLUMN_WORD_TITLE+" TEXT,"+ COLUMN_WORD_MEANING+" TEXT,"+")")
+    private val CREATE_WORD_TABLE = ("CREATE TABLE " + TABLE_NAME + "("
+            + COLUMN_WORD_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"+ COLUMN_WORD_TITLE+ " TEXT,"+
+            COLUMN_WORD_MEANING+ " TEXT"+ ")")
 
     private val DROP_WORD_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
 
     override fun onCreate(db: SQLiteDatabase?) {
+
         if (db != null) {
-            db.execSQL(this.CREATE_WORD_TABLE)
+            db.execSQL(CREATE_WORD_TABLE)
         }
     }
 
@@ -131,7 +133,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     //Create a companion object
     companion object {
         private val DATABASE_VERSION = 1
-        private val DATABASE_NAME = "wordDB.db"
+        private val DATABASE_NAME = "WordDB.db"
         private val TABLE_NAME = "words"
         private val COLUMN_WORD_ID ="word_id"
         private val COLUMN_WORD_TITLE ="word_title"

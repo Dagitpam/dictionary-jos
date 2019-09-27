@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/black"
+    android:layout_height="match_parent"
     tools:context=".View_words">
+
     <ImageView
         android:id="@+id/im_veiw_word_icon"
         android:layout_width="30dp"
@@ -37,7 +38,7 @@
         android:id="@+id/tv_view_word_meaning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Blabalabablabalaababalabalabalabalababbabsbbsbbbbababbababbabbabbabbabbabbabbababbabbabbabbabbabbabbbabbabbabbabbabbabbabbabbbabbababbab"
+        android:text=""
         android:layout_below="@id/horizontal_line"
         android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
