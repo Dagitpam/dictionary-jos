@@ -14,7 +14,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textSize="20sp"/>
     <EditText
         android:id="@+id/et_update_word"
@@ -25,7 +25,7 @@
         android:inputType="text"
         android:imeOptions="actionNext"
         android:paddingStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"/>
     <EditText
@@ -46,10 +46,10 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/et_update_meaning_word"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:text="Update"
         android:textAllCaps="false"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/btnshapes"
         android:textColor="@android:color/white"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"/>
