@@ -91,7 +91,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         values.put(COLUMN_WORD_TITLE,words.title)
         values.put(COLUMN_WORD_MEANING,words.meaning)
 
-        db.update(TABLE_NAME,values,"$COLUMN_WORD_TITLE=?", arrayOf(words.id.toString()))
+        db.update(TABLE_NAME,values,"$COLUMN_WORD_ID=?", arrayOf(words.id.toString()))
         db.close()
     }
     fun fetchWord():List<Words>{
@@ -101,7 +101,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         val columns = arrayOf(COLUMN_WORD_ID, COLUMN_WORD_TITLE, COLUMN_WORD_MEANING)
 
         //Sorting  order
-        val sortOrder = "$COLUMN_WORD_MEANING ASC"
+        val sortOrder = "$COLUMN_WORD_TITLE ASC"
         val wordList = arrayListOf<Words>()
 
         val db = this.readableDatabase

@@ -22,7 +22,6 @@
         android:layout_height="40dp"
         android:layout_below="@+id/tv_updateword_title"
         android:background="@drawable/inputshapes"
-        android:hint="Add word"
         android:inputType="text"
         android:imeOptions="actionNext"
         android:paddingStart="10dp"
@@ -30,26 +29,23 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"/>
     <EditText
-        android:id="@+id/et_update_meaning"
+        android:id="@+id/et_update_meaning_word"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/et_update_word"
         android:background="@drawable/inputshapes"
         android:layout_marginTop="10dp"
-        android:hint="Meaning of word"
-
         android:imeOptions="actionDone"
         android:maxLines="4"
         android:inputType="textMultiLine"
         android:paddingStart="10dp"
-        android:paddingBottom="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"/>
     <Button
         android:id="@+id/bt_update_word_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/et_update_meaning"
+        android:layout_below="@+id/et_update_meaning_word"
         android:layout_marginTop="40dp"
         android:text="Update"
         android:textAllCaps="false"

@@ -38,7 +38,7 @@
         android:id="@+id/tv_view_word_meaning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="meaning is here"
         android:layout_below="@id/horizontal_line"
         android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
@@ -62,11 +62,7 @@
         android:text="Delete"
         android:textAllCaps="false"
         android:background="@android:color/holo_red_light"
-<<<<<<< HEAD
         android:layout_below="@+id/tv_view_word_meaning"
-=======
-        android:layout_below="@id/tv_view_word_meaning"
->>>>>>> 7327238f78025f9ebaae3695a9f0d065616bb787
         android:layout_toEndOf="@+id/bt_view_word_update"
         android:layout_marginTop="60dp"
         android:layout_marginStart="10dp"
