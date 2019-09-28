@@ -77,8 +77,20 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:textColor="@android:color/holo_red_light"/>
-
     </LinearLayout>
+    <Button
+        android:id="@+id/bt_previous"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/layout_two"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/backbtnshapes"
+        android:text="Previous"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAllCaps="false"/>
+
 
 
 </RelativeLayout>

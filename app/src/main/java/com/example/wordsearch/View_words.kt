@@ -64,5 +64,14 @@ class View_words : AppCompatActivity() {
 
             Toast.makeText(this, "Word deleted successfully", Toast.LENGTH_LONG).show()
         })
+        //Redirecting to main activity
+        val btnPrevious = findViewById<Button>(R.id.bt_previous)
+        btnPrevious.setOnClickListener(View.OnClickListener {
+            val toMain = Intent(this,MainActivity::class.java)
+            toMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            toMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            toMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(toMain)
+        })
     }
 }
