@@ -48,7 +48,7 @@ class Update_word : AppCompatActivity() {
            //Cal/ the update word function from thbHelper class
            db_helper.updateWord(words)
            //Redirect to Main activity
-           val toMain = Intent(this,MainActivity::class.java)
+           val toMain = Intent(this,View_words::class.java)
            startActivity(toMain)
        })
 
