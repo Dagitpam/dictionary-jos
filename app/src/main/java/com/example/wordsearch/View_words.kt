@@ -32,6 +32,16 @@ class View_words : AppCompatActivity() {
         meaning.setText(meaning_word)
 
         //Delete and update user
+        val update_btn = findViewById<Button>(R.id.bt_update_word_btn)
+        update_btn.setOnClickListener(View.OnClickListener {
+            //Redirect User to Main activity
+            val toUpdate = Intent(this,Update_word::class.java)
+            toUpdate.putExtra("id",id_word)
+            toUpdate.putExtra("title",title_word)
+            toUpdate.putExtra("meaning",meaning_word)
+
+            startActivity(toUpdate)
+        })
 
         val delete_btn = findViewById<Button>(R.id.bt_view_word_delete)
         delete_btn.setOnClickListener(View.OnClickListener {
